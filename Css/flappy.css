@@ -1,0 +1,71 @@
+*{
+    box-sizing: border-box; 
+    /* considera o tamanho da borda também o border-box */
+}
+
+/* importando a fonte  */
+
+@font-face {
+    font-family: 'pixel';
+    src: url('../fonts/Pixel.ttf');
+}
+
+/* colocando um estilo para qualquer coisa que tenha essa propriedade */
+[wm-flappy]{
+    position: relative;
+    border: 5px solid dodgerblue;
+    height: 700px;
+    width: 1200px;
+    margin: 15px;
+    background-color: deepskyblue;
+    overflow: hidden; /*lembrar que overflow trabalha com aquilo que passa a área.*/
+    /* aqui significa que se estiver fora não vai aparecer com o "hidden." */
+}
+
+.passaro{
+    position: absolute;
+    width: 60px;
+    /* bottom: 50%; */
+    left:  550px  /*calc(50%-30px);
+    /* aqui no left pode está dando erro */
+}
+
+.par-de-barreiras{
+ position: absolute;
+ top: 0;
+ height: 100%;
+ display: flex;
+ flex-direction: column; /*flex-box*/
+ justify-content: space-between; /*propriedade do flex-box*/
+}
+
+.barreira{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.barreira .borda{
+    height: 30px;
+    width: 130px;
+    background: linear-gradient(90deg,#639301,#A5E82E);
+    border: 2px solid #000;
+}
+
+.barreira .corpo{
+    height: 150px;
+    width: 110px;
+    background: linear-gradient(90deg,#639301,#A5E82E);
+    border-left:  2px solid #000;
+    border-right: 2px solid #000;
+}
+
+
+.progresso{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-family: pixel;
+    font-size: 70px;
+    z-index: 100; /*deixa por cima dos canos como a folha de papel lembrar*/
+}
